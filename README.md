@@ -3,7 +3,7 @@ This is a module for PyGame that will return pygame.Surface objects (sprite imag
 than loading every image into PyGame. Additionally, it will prevent cluttering of code with large lists of PyGame image.load calls. This was created by me in 2021,
 but has since been updated and improved throughout the past few years.
 
-# Documentation
+# Documentation 
 While this module is rather small and can be easily understood with a small amount of time looking at the code, this is an easier alternative to that.
 
 ## image_at()
@@ -12,7 +12,7 @@ While this module is rather small and can be easily understood with a small amou
 
   This function returns a pygame.Surface object with the specified image loaded on. Note that these surfaces are converted surfaces.
   
-  (tuple)`rectangle`: (x position, y position, width, height)
+  (tuple)`rectangle`: (x position, y position, width, height). All `rect` locations in this module are specified by the location of their topleft corner.
 
   (int)`scale`: Default value `1`. This is a scalar integer, which scales the image accordingly. If your sprite is already at the correct dimensions for your project, you can ignore this option.
 
