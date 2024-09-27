@@ -3,6 +3,12 @@
 import pygame
 
 class SpriteSheet:
+    '''
+    For full documentation of this module, visit GitHub:
+    https://github.com/DavyJonesStockings/Pygame_spritesheet
+
+    Make sure to read the license!
+    '''
 
     def __init__(self, filepath):
         """Load the sheet."""
@@ -45,14 +51,19 @@ class SpriteSheet:
         
         rects: a list filled with rectangle tuples. see image_at() function
         for details on rectangle tuple format
+        scale: see image_at()
         colorkey: see image_at()
         """
         return [self.image_at(rect, scale, colorkey) for rect in rects]
 
-    def load_horizontal_strip(self, rect:tuple, image_count:int, scale:int = 1,colorkey:int = None) -> list:
+    def load_row(self, rect:tuple, image_count:int, scale:int = 1,colorkey:int = None) -> list:
         """Load a whole strip of images, and return them as a list.
         This function assumes equal size of each image within the row.
-        rect: a tuple in the format of (x, y, width, height).
+
+        rect: see image_at() for definition. This will be the first `rect` from which the positions of other sprites are derived.
+        image_count: 
+        scale: see image_at()
+        colorkey: see image_at()
         """
 
         # rect: (x, y, width, height)
@@ -60,10 +71,9 @@ class SpriteSheet:
                 for x in range(image_count)]
         return self.images_at(tups, scale, colorkey)
 
-    def load_vertical_strip(self, rect:tuple, image_count:int, scale:int = 1, colorkey:int = None) -> list:
+    def load_column(self, rect:tuple, image_count:int, scale:int = 1, colorkey:int = None) -> list:
         """Load a whole strip of images, and return them as a list.
         This function assumes equal size of each image within the column.
-        rect:
         """
 
         # rect: (x, y, width, height)
